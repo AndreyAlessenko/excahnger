@@ -10,10 +10,13 @@
       <h3> {{ exchangeRatio }} {{ toCurrencyName }}</h3>
       <div class="grid">
         <input v-model="baseAmount" placeholder="Введите сумму" class="sum"/>
-        <select v-model="baseCurrency">
-          <option v-for="curr in currencies" v-bind:value="curr.key" @change="getCoef()">{{ curr.value }}</option>
-        </select>
-        <button class="btn" @click="toggleCurrency">Изменить валюты</button>
+        <div>
+          <select v-model="baseCurrency">
+            <option v-for="curr in currencies" v-bind:value="curr.key" @change="getCoef()">{{ curr.value }}</option>
+          </select>
+          <button class="btn" @click="toggleCurrency">Изменить валюты</button>
+        </div>
+
       </div>
       <div class="grid">
         <div class="sum">{{ result }}</div>
